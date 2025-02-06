@@ -1,0 +1,2 @@
+# FinSpectre
+Personalised Stock Analysis

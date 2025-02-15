@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import Logo from '/Logo.png'
 import './App.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from './Login';
 
 function App() {
   const [isNear, setIsNear] = useState(false);
@@ -35,6 +37,11 @@ function App() {
       >
         SMART WEALTH, SIMPLIFIED
       </h2>
+      <Router>
+      <Routes>
+        <Route path="/" element={<Login />} /> Login
+      </Routes>
+    </Router>
     </>
   )
 }

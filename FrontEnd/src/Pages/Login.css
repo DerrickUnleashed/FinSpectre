@@ -71,9 +71,14 @@ button {
 }
 
 /* Login Button */
+.input-btn{
+  width: 323px;
+}
+
 .login-btn {
   background: linear-gradient(90deg, #e6b800, #b8860b);
   color: #1e1e1e;
+  width: 350px;
 }
 
 .login-btn:hover {

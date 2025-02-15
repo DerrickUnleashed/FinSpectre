@@ -2,7 +2,9 @@ import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./firebaseconfig";
 import { useNavigate } from "react-router-dom";
-import './NavBar.css';
+import "./Register.css"; // Import the new CSS file
+import { FaGoogle, FaSignInAlt, FaUserPlus } from "react-icons/fa";
+
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -23,12 +25,27 @@ const Register = () => {
   return (
     <div className="auth-container">
       <h2>Register</h2>
-      <form onSubmit={handleRegister}>
-        <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-        <button type="submit">Register</button>
+      <form onSubmit={handleRegister} className="login-form">
+        <input 
+          type="email" 
+          placeholder="Email" 
+          value={email} 
+          onChange={(e) => setEmail(e.target.value)} 
+          required 
+          className="input-btn"
+        />
+        <input 
+          type="password" 
+          placeholder="Password" 
+          value={password} 
+          onChange={(e) => setPassword(e.target.value)} 
+          required 
+          className="input-btn"
+        />
+        <button type="submit" className="login-btn"><FaUserPlus /> Register</button>
       </form>
     </div>
   );
 };
+
 export default Register;

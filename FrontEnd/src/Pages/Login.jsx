@@ -40,6 +40,7 @@ const Login = () => {
           value={email} 
           onChange={(e) => setEmail(e.target.value)} 
           required 
+          className="input-btn"
         />
         <input 
           type="password" 
@@ -47,6 +48,7 @@ const Login = () => {
           value={password} 
           onChange={(e) => setPassword(e.target.value)} 
           required 
+          className="input-btn"
         />
         <button type="submit" className="login-btn">
           <FaSignInAlt /> Login

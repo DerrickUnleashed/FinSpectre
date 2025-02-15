@@ -1,8 +1,13 @@
 const admin = require("firebase-admin");
-const serviceAccount = require("../finspectrefirebaseconfig.json"); // Add Firebase service account JSON here
+const serviceAccount = require("../finspectrefirebaseconfig.json");
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-});
+const initializeFirebase = () => {
+  if (!admin.apps.length) {
+    admin.initializeApp({
+      credential: admin.credential.cert(serviceAccount),
+    });
+    console.log("🔥 Firebase Admin Initialized");
+  }
+};
 
-module.exports = admin;
+module.exports = { initializeFirebase, admin };

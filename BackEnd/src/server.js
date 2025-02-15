@@ -20,7 +20,7 @@ app.use(express.json());
 initializeFirebase();
 
 // Connect to MongoDB
-connectDB();
+//connectDB();
 
 // Routes
 app.use('/api/users', userRoutes);

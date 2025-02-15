@@ -3,28 +3,40 @@ import Logo from '/Logo.png'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isNear, setIsNear] = useState(false);
+
+  const handleMouseMove = (event) => {
+    const textElement = event.target;
+    const rect = textElement.getBoundingClientRect();
+    const distance = Math.sqrt(
+      Math.pow(event.clientX - (rect.left + rect.width / 2), 2) +
+      Math.pow(event.clientY - (rect.top + rect.height / 2), 2)
+    );
+
+    setIsNear(distance < 100); // Adjust glow sensitivity
+  };
 
   return (
     <>
       <div>
           <img src={Logo} className="logo" alt="FinSpectre" />
       </div>
-      <h1>FIN SPECTRE</h1>
-      <h2>SMART WEALTH, SIMPLIFIED</h2>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the logo to learn more about us!
-      </p>
+      <h1 
+        className={`mainText ${isNear ? 'dynamicGlow' : ''}`} 
+        onMouseMove={handleMouseMove} 
+        onMouseLeave={() => setIsNear(false)}
+      >
+        FIN SPECTRE
+      </h1>
+      <h2 
+        className={`mainText ${isNear ? 'dynamicGlow' : ''}`} 
+        onMouseMove={handleMouseMove} 
+        onMouseLeave={() => setIsNear(false)}
+      >
+        SMART WEALTH, SIMPLIFIED
+      </h2>
     </>
   )
 }
 
-export default App
+export default App;

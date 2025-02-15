@@ -5,8 +5,29 @@
   text-align: center;
 }
 
+.mainText {
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #e6b800, #b8860b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 8px rgba(230, 184, 0, 0.7), 0 0 15px rgba(184, 134, 11, 0.5);
+  transition: text-shadow 0.2s ease-out;
+}
+
+.mainText:hover {
+  filter: drop-shadow(0 0 2em rgba(230, 184, 0, 0.8));
+}
+
+.dynamicGlow {
+  text-shadow: 0 0 15px rgba(230, 184, 0, 0.9), 0 0 25px rgba(184, 134, 11, 0.8);
+}
+
+
+
 .logo {
-  height: 6em;
+  height: 10em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
@@ -14,9 +35,7 @@
 .logo:hover {
   filter: drop-shadow(0 0 2em #eddc1caa);
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
+
 
 @keyframes logo-spin {
   from {

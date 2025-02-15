@@ -1,47 +1,40 @@
 /* Navbar Styling */
 .navbar {
   display: flex;
-  justify-content: space-between; /* Ensures spacing between logo and buttons */
   align-items: center;
-  width: 100%; /* Make sure navbar spans full width */
-  padding: 1rem 2rem;
+  width: 100%;
+  padding: 0.8rem 1.5rem;
   background: #121212;
   box-shadow: 0 4px 15px rgba(230, 184, 0, 0.3);
   border-bottom: 3px solid rgba(230, 184, 0, 0.8);
 }
 
-/* Centering logo and buttons */
-.logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #e6b800;
-  text-shadow: 0 0 10px rgba(230, 184, 0, 0.6);
-}
-
-/* Navigation Links */
+/* Aligning Buttons to the Right with Less Gap */
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 5px; /* Reduced space between buttons */
+  margin-left: auto; /* Push buttons to the right without overflow */
 }
 
-/* Buttons */
+/* Smaller Buttons */
 .nav-btn {
   background: none;
   border: 2px solid transparent;
   color: #e6b800;
   font-size: 1.2rem;
   font-weight: bold;
-  padding: 0.6rem 1.4rem;
+  padding: 0.3rem 0.8rem;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   position: relative;
+  border-radius: 5px;
 }
 
 /* Hover Effect */
 .nav-btn:hover {
   border-color: #e6b800;
   background: rgba(230, 184, 0, 0.15);
-  box-shadow: 0 0 15px rgba(230, 184, 0, 0.7);
+  box-shadow: 0 0 10px rgba(230, 184, 0, 0.5);
   transform: translateY(-2px);
 }
 

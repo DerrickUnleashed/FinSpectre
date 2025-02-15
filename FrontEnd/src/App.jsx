@@ -11,7 +11,21 @@ function App() {
     <Router>
       
       <div className="min-h-screen flex flex-col">
-      <Navbar />
+      <div 
+        style={{ 
+          position: "fixed", 
+          top: 0, 
+          left: "50%", 
+          transform: "translateX(-50%)", 
+          width: "100%", 
+          zIndex: 50, 
+          background: "#121212", 
+          boxShadow: "0 4px 15px rgba(230, 184, 0, 0.3)",
+          borderBottom: "3px solid rgba(230, 184, 0, 0.8)",
+        }}
+      >
+        <Navbar />
+      </div>
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />

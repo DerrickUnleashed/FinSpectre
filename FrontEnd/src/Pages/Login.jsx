@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { auth } from "./firebaseconfig";  // Import Firebase auth
+import { auth } from "./firebaseconfig";  
 import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import './NavBar.css';
+import "./Login.css";
+import { FaGoogle, FaSignInAlt, FaUserPlus } from "react-icons/fa";
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const provider = new GoogleAuthProvider();
   const navigate = useNavigate();
+
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
@@ -29,16 +32,33 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <h2>Login</h2>
-      <form onSubmit={handleLogin}>
-        <input type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} required />
-        <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} required />
-        <button type="submit">Login</button>
+      <h2>Welcome Back</h2>
+      <form onSubmit={handleLogin} className="login-form">
+        <input 
+          type="email" 
+          placeholder="Email" 
+          value={email} 
+          onChange={(e) => setEmail(e.target.value)} 
+          required 
+        />
+        <input 
+          type="password" 
+          placeholder="Password" 
+          value={password} 
+          onChange={(e) => setPassword(e.target.value)} 
+          required 
+        />
+        <button type="submit" className="login-btn">
+          <FaSignInAlt /> Login
+        </button>
       </form>
-      <button onClick={handleGoogleLogin}>Sign in with Google</button>
-      <button onClick={() => navigate("/register")} className="nav-btn">Register</button>
+      <button onClick={handleGoogleLogin} className="google-btn">
+        <FaGoogle /> Sign in with Google
+      </button>
+      <button onClick={() => navigate("/register")} className="register-btn">
+        <FaUserPlus /> Register
+      </button>
     </div>
-    
   );
 };
 

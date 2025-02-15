@@ -1,32 +1,51 @@
+/* Navbar Styling */
 .navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: black;
-    padding: 1rem;
-    box-shadow: 0 -4px 10px rgba(0, 0, 255, 0.5);
-    border-bottom: 4px solid rgba(0, 0, 255, 0.8);
-  }
-  
-  .nav-btn {
-    background: none;
-    border: none;
-    color: gold;
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin: 0 1rem;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    position: relative;
-    transition: transform 0.2s ease, text-shadow 0.3s ease;
-  }
-  
-  .nav-btn:hover {
-    transform: scale(1.1);
-    text-shadow: 0 0 10px gold;
-  }
-  
-  .nav-btn:active {
-    transform: scale(0.95);
-  }
-  
+  display: flex;
+  justify-content: space-between; /* Ensures spacing between logo and buttons */
+  align-items: center;
+  width: 100%; /* Make sure navbar spans full width */
+  padding: 1rem 2rem;
+  background: #121212;
+  box-shadow: 0 4px 15px rgba(230, 184, 0, 0.3);
+  border-bottom: 3px solid rgba(230, 184, 0, 0.8);
+}
+
+/* Centering logo and buttons */
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #e6b800;
+  text-shadow: 0 0 10px rgba(230, 184, 0, 0.6);
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+/* Buttons */
+.nav-btn {
+  background: none;
+  border: 2px solid transparent;
+  color: #e6b800;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.6rem 1.4rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+/* Hover Effect */
+.nav-btn:hover {
+  border-color: #e6b800;
+  background: rgba(230, 184, 0, 0.15);
+  box-shadow: 0 0 15px rgba(230, 184, 0, 0.7);
+  transform: translateY(-2px);
+}
+
+/* Active Click Effect */
+.nav-btn:active {
+  transform: scale(0.95);
+}

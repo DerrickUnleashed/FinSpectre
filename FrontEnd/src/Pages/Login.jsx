@@ -1,12 +1,13 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { auth } from "./firebaseconfig";  // Import Firebase auth
 import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-
+import './NavBar.css';
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const provider = new GoogleAuthProvider();
-
+  const navigate = useNavigate();
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
@@ -35,6 +36,7 @@ const Login = () => {
         <button type="submit">Login</button>
       </form>
       <button onClick={handleGoogleLogin}>Sign in with Google</button>
+      <button onClick={() => navigate("/register")} className="nav-btn">Register</button>
     </div>
     
   );

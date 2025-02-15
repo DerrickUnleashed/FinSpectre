@@ -6,7 +6,7 @@
 }
 
 .mainText {
-  font-family: 'Arial', sans-serif;
+  font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
   font-weight: bold;
   text-transform: uppercase;
   background: linear-gradient(90deg, #e6b800, #b8860b);

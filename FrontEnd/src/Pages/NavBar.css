@@ -12,8 +12,8 @@
 /* Aligning Buttons to the Right with Less Gap */
 .nav-links {
   display: flex;
-  gap: 5px; /* Reduced space between buttons */
-  margin-left: auto; /* Push buttons to the right without overflow */
+  gap: 12px; /* Reduced space between buttons */
+  margin-left: 175vh;
 }
 
 /* Smaller Buttons */

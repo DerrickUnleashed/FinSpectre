@@ -13,8 +13,8 @@
 /* Aligning Buttons to the Right with Less Gap */
 .nav-links {
   display: flex;
-  gap: 12px; /* Reduced space between buttons */
-  margin-left: 75%;
+  gap: 3%; /* Reduced space between buttons */
+  margin-left: 69%;
 }
 
 .mainText {

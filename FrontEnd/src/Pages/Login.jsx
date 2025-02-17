@@ -18,6 +18,7 @@ const Login = () => {
       alert("✅ Logged in successfully!");
       localStorage.setItem('token', 'loggedIn'); // Store a token
       navigate("/"); // Redirect to home page
+      window.location.reload();
     } catch (error) {
       alert("❌ Login failed: " + error.message);
     }
@@ -29,6 +30,7 @@ const Login = () => {
       alert("✅ Google Login successful!");
       localStorage.setItem('token', 'loggedIn'); // Store a token
       navigate("/"); // Redirect to home page
+      window.location.reload();
     } catch (error) {
       alert("❌ Google Login failed: " + error.message);
     }

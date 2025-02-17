@@ -28,7 +28,7 @@ function Home() {
         onMouseMove={handleMouseMove} 
         onMouseLeave={() => setIsNear(false)}
       >
-        FIN SPECTRE
+        FINSPECTRE
       </h1>
       <h2 
         className={`mainText ${isNear ? 'dynamicGlow' : ''}`} 

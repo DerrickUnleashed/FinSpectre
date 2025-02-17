@@ -16,6 +16,8 @@ const Login = () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       alert("✅ Logged in successfully!");
+      localStorage.setItem('token', 'loggedIn'); // Store a token
+      navigate("/"); // Redirect to home page
     } catch (error) {
       alert("❌ Login failed: " + error.message);
     }
@@ -25,6 +27,8 @@ const Login = () => {
     try {
       await signInWithPopup(auth, provider);
       alert("✅ Google Login successful!");
+      localStorage.setItem('token', 'loggedIn'); // Store a token
+      navigate("/"); // Redirect to home page
     } catch (error) {
       alert("❌ Google Login failed: " + error.message);
     }

@@ -4,9 +4,12 @@ const mongoose = require('mongoose');
 const firebase = require('firebase-admin');
 const userRoutes = require('./routes/userRoutes');
 const { initializeFirebase } = require('./config/firebase');
-const { connectDB } = require('./config/db');
+const connectDB = require('./config/db');
 
-require('dotenv').config();
+
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
+
 
 const app = express();
 
@@ -20,7 +23,7 @@ app.use(express.json());
 initializeFirebase();
 
 // Connect to MongoDB
-//connectDB();
+connectDB();
 
 // Routes
 app.use('/api/users', userRoutes);

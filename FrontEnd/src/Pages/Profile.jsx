@@ -3,7 +3,11 @@ import './index.css';
 import { useNavigate } from "react-router-dom";
 import { auth } from "./firebaseconfig"; // Import auth
 import { signOut, reauthenticateWithCredential, EmailAuthProvider } from "firebase/auth"; 
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { Line } from 'react-chartjs-2'; 
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler } from 'chart.js';
+
+// Register the required Chart.js components
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler);
 
 const Profile = () => {
     // Editable states
@@ -62,8 +66,50 @@ const Profile = () => {
         { label: 'May', value: 9000 },
     ];
 
+    // Chart.js Data Configuration
+    const chartData = {
+        labels: usageData.map(data => data.label),
+        datasets: [
+            {
+                label: 'Usage Trend',
+                data: usageData.map(data => data.value),
+                fill: true, // Enabling the fill effect
+                backgroundColor: 'rgba(255, 215, 0, 0.2)', // Light yellow color for fill
+                borderColor: '#FFD700',
+                borderWidth: 2,
+                pointRadius: 5,
+                tension: 0.3
+            }
+        ]
+    };
+
+    const options = {
+        plugins: {
+            tooltip: {
+                callbacks: {
+                    label: (context) => `$${context.raw}`
+                }
+            }
+        },
+        responsive: true,
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: 'Month'
+                }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: 'Usage Value ($)'
+                }
+            }
+        }
+    };
+
     return (
-        <div style={{ width: '100%', height: '100%', background: '#111', color: '#fff', fontFamily: 'Arial' }}>
+        <div style={{ marginTop:'350px',width: '100%', height: '100%', background: '#111', color: '#fff', fontFamily: 'Arial' }}>
             {/* Profile Content */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', padding: '20px', width: '100%' }}>
                 
@@ -123,14 +169,7 @@ const Profile = () => {
                     {/* Usage Trend */}
                     <div style={{ flex: 2, background: '#222', padding: '20px', borderRadius: '10px', boxShadow: '0 0 10px rgba(255, 215, 0, 0.2)' }}>
                         <h2 style={{ color: '#FFD700' }}>Usage Trend</h2>
-                        <ResponsiveContainer width="100%" height={250}>
-                            <LineChart data={usageData}>
-                                <XAxis dataKey="label" stroke="#FFD700" />
-                                <YAxis stroke="#FFD700" />
-                                <Tooltip />
-                                <Line type="monotone" dataKey="value" stroke="#FFD700" strokeWidth={2} dot={{ r: 5 }} />
-                            </LineChart>
-                        </ResponsiveContainer>
+                        <Line data={chartData} options={options} />
                     </div>                
                 </div>
 

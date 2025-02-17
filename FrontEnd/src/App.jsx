@@ -2,11 +2,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
 import Navbar from './Pages/NavBar';
 import Register from './Pages/Register';
-//import Footer from './components/Footer';
+import Footer from './Pages/Footer';
 import Login from './Pages/Login';
 //import SignUpPage from './pages/SignUpPage';
 import NotFound from './Pages/NotFound';
 import Profile from './Pages/Profile';
+// import Manager from './Pages/Manager';
 function App() {
   return (
     <Router>
@@ -34,9 +35,10 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/*" element={<NotFound />} />
+           {/* <Route path="/manager" element={<Manager/>} /> */}
           </Routes>
         </main>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </Router>
   );

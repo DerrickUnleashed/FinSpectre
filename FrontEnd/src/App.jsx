@@ -7,7 +7,6 @@ import Login from './Pages/Login';
 //import SignUpPage from './pages/SignUpPage';
 import NotFound from './Pages/NotFound';
 import Profile from './Pages/Profile';
-
 function App() {
   return (
     <Router>

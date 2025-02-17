@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 const Navbar = () => {
     const navigate = useNavigate();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+    //setIsLoggedIn(false);
     useEffect(() => {
         const token = localStorage.getItem('token');
         if (token) {

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import './Footer.css';
 
 const Footer = () => {
@@ -24,29 +23,41 @@ const Footer = () => {
         >
           Contact Us
         </button>
-        {showForm && (
-          <form className="contact-form" onSubmit={handleSubmit}>
-            <h3>Contact Us</h3>
-            <div className="form-group">
-              <input type="text" name="name" placeholder="Your Name" required />
-            </div>
-            <div className="form-group">
-              <input type="email" name="email" placeholder="Your Email" required />
-            </div>
-            <div className="form-group">
-              <input type="text" name="subject" placeholder="Subject" required />
-            </div>
-            <div className="form-group">
-              <textarea name="message" placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" className="footer-btn">Send Message</button>
-          </form>
-        )}
         <div className="copyright">
-          © 2024 FinSpectre. All rights reserved.
+          ©️ 2024 FinSpectre. All rights reserved.
         </div>
       </div>
+
+      {showForm && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <button 
+              className="close-btn"
+              onClick={() => setShowForm(false)}
+            >
+              &times;
+            </button>
+            <form className="contact-form" onSubmit={handleSubmit}>
+              <h3>Contact Us</h3>
+              <div className="form-group">
+                <input type="text" name="name" placeholder="Your Name" required />
+              </div>
+              <div className="form-group">
+                <input type="email" name="email" placeholder="Your Email" required />
+              </div>
+              <div className="form-group">
+                <input type="text" name="subject" placeholder="Subject" required />
+              </div>
+              <div className="form-group1">
+                <textarea name="message" placeholder="Your Message" required></textarea>
+              </div>
+              <button type="submit" className="footer-btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      )}
     </footer>
+
 
   );
 };

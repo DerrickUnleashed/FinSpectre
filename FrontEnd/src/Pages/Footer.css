@@ -54,8 +54,8 @@
 
 .close-btn {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 0.8rem;
+  right: 1.6rem;
   background: none;
   border: none;
   color: #e6b800;
@@ -63,7 +63,8 @@
   cursor: pointer;
   padding: 0.5rem;
   z-index: 1001;
-  width: 10%;
+  width: 5%;
+  height: 5%;
 }
 
 
@@ -140,10 +141,13 @@
 .close-btn:hover {
   color: #ffd700;
   transform: scale(1.1);
+  border: 2px solid #e6b800;
 }
 
 .close-btn:active {
+  color: #ffd700;
   transform: scale(0.9);
+  border: 2px solid #e6b800;
 }
 
 .copyright {

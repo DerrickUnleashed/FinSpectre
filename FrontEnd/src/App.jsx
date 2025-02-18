@@ -38,7 +38,9 @@ function App() {
            {/* <Route path="/manager" element={<Manager/>} /> */}
           </Routes>
         </main>
+        <div className="flex flex-shrink bottom-0 w-full">
         <Footer />
+        </div>
       </div>
     </Router>
   );

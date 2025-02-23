@@ -14,6 +14,9 @@ exports.fetchStocks = async (req, res) => {
 // Add a new stock
 exports.addStock = async (req, res) => {
   try {
+    if (!req.user) {
+      return res.status(401).json({ message: 'Unauthorized' });
+    }
     const { symbol, quantity, purchasePrice } = req.body;
     const stock = new Stock({
       userId: req.user._id,
@@ -21,6 +24,8 @@ exports.addStock = async (req, res) => {
       quantity,
       purchasePrice,
     });
+
+
     await stock.save();
     res.status(201).json(stock);
   } catch (error) {

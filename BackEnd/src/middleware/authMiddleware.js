@@ -13,10 +13,21 @@ const protect = async (req, res, next) => {
       token = req.headers.authorization.split(' ')[1];
       const decoded = await admin.auth().verifyIdToken(token); // Use Firebase Admin SDK to verify the token
 
-      console.log("Decoded Token:", decoded); // Log the decoded token for debugging
+     // console.log("Decoded Token:", decoded); // Log the decoded token for debugging
 
-      req.user = await User.findOne({ uid: decoded.uid });
+      let user = await User.findOne({ uid: decoded.uid });
+      if (!user) {
+        // Create new user if doesn't exist
+        user = new User({
+          uid: decoded.uid,
+          email: decoded.email || '',
+          displayName: decoded.name || ''
+        });
+        await user.save();
+      }
+      req.user = user;
       next();
+
     } catch (error) {
       console.error(error);
       res.status(401).json({ message: 'Not authorized' });

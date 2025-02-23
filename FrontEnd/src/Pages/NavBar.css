@@ -3,20 +3,20 @@
   display: flex;
   align-items: center;
   width: 100%;
-  height: 40px; /* Reduced height */
+  height: 40px;
   padding: 0.5rem 1.2rem;
   background: #121212;
   box-shadow: 0 4px 15px rgba(230, 184, 0, 0.3);
   border-bottom: 3px solid rgba(230, 184, 0, 0.8);
 }
 
-/* Aligning Buttons to the Right with Less Gap */
+/* Aligning Buttons in a Straight Line */
 .nav-links {
   display: flex;
   gap: 8px;
   margin-left: auto;
   margin-right: 15px;
-  flex-wrap: wrap;
+  align-items: center;
 }
 
 .mainText {
@@ -52,7 +52,6 @@
   position: relative;
   border-radius: 5px;
   white-space: nowrap;
-  margin: 2px 0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   transform: perspective(100px) translateZ(0);
 }

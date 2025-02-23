@@ -11,8 +11,8 @@
 }
 
 
-
 .dashboard-title {
+  margin-top: 150px;
   color: rgba(255, 215, 0, 1); /* Gold color */
   text-align: center;
   font-size: 2.5em;

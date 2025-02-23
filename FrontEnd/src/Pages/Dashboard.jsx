@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Line, Bar, Pie } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, BarElement, ArcElement, Title, Tooltip, Legend } from 'chart.js';
@@ -45,9 +44,10 @@ const Dashboard = () => {
   };
 
   return (
-
+    <div className="dashboard-heading">
+      <h2 className="dashboard-title">Stock Dashboard</h2>
     <div className="dashboard-container">
-      <h1 className="dashboard-title">Stock Dashboard</h1>
+      
       <div className="chart-grid">
         <div className="chart-item">
           <h2>Line Chart</h2>
@@ -82,6 +82,7 @@ const Dashboard = () => {
           <Bar data={barData} />
         </div>
       </div>
+    </div>
     </div>
   );
 };

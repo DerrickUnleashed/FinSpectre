@@ -4,11 +4,15 @@
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Change to 3 columns */
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* Ensure equal width columns */
   gap: 20px;
-  max-height: calc(100vh - 150px); /* Adjust height for navbar and footer */
+  max-height: calc(100vh - 200px); /* Increased space for footer */
   overflow-y: auto; /* Enable scrolling */
+  width: 100%; /* Ensure full width */
+  margin-bottom: 50px; /* Additional space for footer */
 }
+
+
 
 
 .dashboard-title {
@@ -24,8 +28,37 @@
   background-color: grey;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+  width: 100%; /* Ensure full width */
+  box-sizing: border-box; /* Include padding in width calculation */
+  transform: perspective(1000px) translateZ(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
 }
+
+.chart-item:hover {
+  transform: perspective(1000px) translateZ(20px);
+  box-shadow: 0 0 40px rgba(255, 215, 0, 1);
+}
+
+.chart-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+  box-shadow: 0 0 50px rgba(255, 215, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.chart-item:hover::before {
+  opacity: 1;
+}
+
+
 
 
 .chart-item h2 {

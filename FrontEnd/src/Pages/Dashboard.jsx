@@ -47,43 +47,50 @@ const Dashboard = () => {
     <div className="dashboard-heading">
       <h2 className="dashboard-title">Stock Dashboard</h2>
     <div className="dashboard-container">
-      
-      <div className="chart-grid">
         <div className="chart-item">
-          <h2>Line Chart</h2>
+
+          <h2>Price Trends</h2>
+
           <Line data={lineData} />
         </div>
         <div className="chart-item">
-          <h2>Bar Chart</h2>
+          <h2>Volume Analysis</h2>
+
           <Bar data={barData} />
         </div>
         <div className="chart-item">
-          <h2>Pie Chart</h2>
+          <h2>Portfolio Allocation</h2>
+
           <Pie data={pieData} />
         </div>
         <div className="chart-item">
-          <h2>Line Chart 2</h2>
+          <h2>Technical Indicators</h2>
+
           <Line data={lineData} />
         </div>
         <div className="chart-item">
-          <h2>Bar Chart 2</h2>
+          <h2>Sector Performance</h2>
+
           <Bar data={barData} />
         </div>
         <div className="chart-item">
-          <h2>Pie Chart 2</h2>
+          <h2>Risk Distribution</h2>
+
           <Pie data={pieData} />
         </div>
         <div className="chart-item">
-          <h2>Line Chart 3</h2>
+          <h2>Moving Averages</h2>
+
           <Line data={lineData} />
         </div>
         <div className="chart-item">
-          <h2>Bar Chart 3</h2>
+          <h2>Market Sentiment</h2>
+
           <Bar data={barData} />
         </div>
       </div>
     </div>
-    </div>
+
   );
 };
 

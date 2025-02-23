@@ -1,35 +1,34 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-
-import './Manager.css';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "./Manager.css";
 
 const Manager = () => {
   const [stocks, setStocks] = useState([]);
-  const [stockName, setStockName] = useState('');
-  const [stockQuantity, setStockQuantity] = useState('');
-  const [stockPrice, setStockPrice] = useState('');
+  const [stockName, setStockName] = useState("");
+  const [stockQuantity, setStockQuantity] = useState("");
+  const [stockPrice, setStockPrice] = useState("");
   const [editingStockId, setEditingStockId] = useState(null);
-
-  const fetchStocks = async () => {
-    try {
-      const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:2000/api/stocks', {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      setStocks(Array.isArray(response.data) ? response.data : []);
-    } catch (error) {
-      console.error('Error fetching stocks:', error);
-    }
-  };
 
   useEffect(() => {
     fetchStocks();
   }, []);
 
-  const handleAddStock = async (e) => {
+  const fetchStocks = async () => {
+    try {
+      const token = localStorage.getItem("token");
+      const response = await axios.get("http://localhost:2000/api/stocks", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      setStocks(Array.isArray(response.data) ? response.data : []);
+    } catch (error) {
+      console.error("Error fetching stocks:", error);
+    }
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const token = localStorage.getItem('token');
+      const token = localStorage.getItem("token");
       const stockData = {
         symbol: stockName,
         quantity: stockQuantity,
@@ -42,16 +41,15 @@ const Manager = () => {
         });
         setEditingStockId(null);
       } else {
-        await axios.post('http://localhost:2000/api/stocks', stockData, {
+        await axios.post("http://localhost:2000/api/stocks", stockData, {
           headers: { Authorization: `Bearer ${token}` },
         });
       }
-      setStockName('');
-      setStockQuantity('');
-      setStockPrice('');
+
+      resetForm();
       fetchStocks();
     } catch (error) {
-      console.error('Error adding/updating stock:', error);
+      console.error("Error saving stock:", error);
     }
   };
 
@@ -64,20 +62,26 @@ const Manager = () => {
 
   const handleDeleteStock = async (id) => {
     try {
-      const token = localStorage.getItem('token');
+      const token = localStorage.getItem("token");
       await axios.delete(`http://localhost:2000/api/stocks/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchStocks();
     } catch (error) {
-      console.error('Error deleting stock:', error);
+      console.error("Error deleting stock:", error);
     }
+  };
+
+  const resetForm = () => {
+    setStockName("");
+    setStockQuantity("");
+    setStockPrice("");
   };
 
   return (
     <div className="manager-container">
-      <h1>Stock Manager</h1>
-      <form onSubmit={handleAddStock} className="stock-form">
+      <h1 className="test">Stock Manager</h1>
+      <form onSubmit={handleSubmit} className="stock-form">
         <input
           type="text"
           placeholder="Stock Symbol"
@@ -100,16 +104,22 @@ const Manager = () => {
           required
         />
         <button type="submit" className="gold-button">
-          {editingStockId ? 'Update Stock' : 'Add Stock'}
+          {editingStockId ? "Update Stock" : "Add Stock"}
         </button>
       </form>
       <ul className="stock-list">
         {stocks.map((stock) => (
-          <li key={stock._id}>
-            <span>{stock.symbol} - Qty: {stock.quantity} - Price: ${stock.purchasePrice}</span>
+          <li key={stock._id} className="stock-item">
+            <span>
+              {stock.symbol} - Qty: {stock.quantity} - Price: ${stock.purchasePrice}
+            </span>
             <div className="button-group">
-              <button onClick={() => handleEditStock(stock)} className="gold-button">Edit</button>
-              <button onClick={() => handleDeleteStock(stock._id)} className="gold-button delete">Delete</button>
+              <button onClick={() => handleEditStock(stock)} className="gold-button edit">
+                Edit
+              </button>
+              <button onClick={() => handleDeleteStock(stock._id)} className="gold-button delete">
+                Delete
+              </button>
             </div>
           </li>
         ))}

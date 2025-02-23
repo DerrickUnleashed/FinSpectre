@@ -1,43 +1,60 @@
 .manager-container {
   padding: 20px;
   background-color: #121212;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(230, 184, 0, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(230, 184, 0, 0.3);
   border: 3px solid rgba(230, 184, 0, 0.8);
   color: #e6b800;
   width: 90%;
-  max-width: 600px;
+  max-width: 650px;
   margin: 40px auto;
   text-align: center;
 }
 
+.test{
+  display: flex;
+  margin-left: 0;
+}
+
 .manager-container h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
+  width:40vw;
+  height: 20vh;
+  font-size: 26px;
+  margin-bottom: 15px;
   color: #e6b800;
+  justify-content: center;
+  align-items: center;
+  display: flex
 }
 
 .stock-form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .manager-container input {
-  padding: 10px;
+  padding: 12px;
   margin: 5px 0;
   border: 2px solid #e6b800;
-  border-radius: 4px;
+  width:auto;
+  border-radius: 6px;
   background: #1a1a1a;
   color: #ffffff;
   font-size: 16px;
+  text-align: center;
+  outline: none;
+  transition: border 0.3s ease-in-out;
+}
+
+.manager-container input:focus {
+  border-color: #ffd700;
 }
 
 .gold-button {
-  padding: 10px 15px;
-  margin: 5px 0;
+  padding: 12px 15px;
   border: 2px solid #e6b800;
-  border-radius: 5px;
+  border-radius: 6px;
   background: rgba(230, 184, 0, 0.1);
   color: #e6b800;
   font-size: 16px;
@@ -64,31 +81,42 @@
   color: white;
 }
 
+.gold-button.edit {
+  background: rgba(0, 150, 255, 0.2);
+  border-color: #0096ff;
+  color: #0096ff;
+}
+
+.gold-button.edit:hover {
+  background: #0096ff;
+  color: white;
+}
+
 .stock-list {
   list-style-type: none;
   padding: 0;
   margin-top: 20px;
 }
 
-.stock-list li {
+.stock-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  margin: 5px 0;
+  padding: 12px;
+  margin: 6px 0;
   background-color: #1a1a1a;
-  border-radius: 4px;
+  border-radius: 6px;
   box-shadow: 0 2px 6px rgba(230, 184, 0, 0.3);
 }
 
-.stock-list li span {
+.stock-item span {
   color: #e6b800;
   font-size: 16px;
 }
 
 .button-group {
   display: flex;
-  gap: 10px;
+  gap: 8px;
 }
 
 @media (max-width: 768px) {
@@ -97,7 +125,7 @@
     padding: 15px;
   }
 
-  .stock-list li {
+  .stock-item {
     flex-direction: column;
     text-align: center;
     gap: 10px;

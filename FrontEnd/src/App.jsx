@@ -8,6 +8,7 @@ import Login from './Pages/Login';
 import NotFound from './Pages/NotFound';
 import Profile from './Pages/Profile';
 import Manager from './Pages/Manager';
+import Dashboard from './Pages/Dashboard';
 function App() {
   return (
     <Router>
@@ -36,6 +37,7 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/*" element={<NotFound />} />
             <Route path="/manager" element={<Manager/>} /> 
+            <Route path="/dashboard" element={<Dashboard/>} />
           </Routes>
         </main>
         <div className="flex flex-shrink bottom-0 w-full">

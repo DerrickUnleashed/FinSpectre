@@ -1,49 +1,73 @@
 .manager-container {
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: #121212;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(230, 184, 0, 0.3);
+  border: 3px solid rgba(230, 184, 0, 0.8);
+  color: #e6b800;
+  width: 90%;
+  max-width: 600px;
+  margin: 40px auto;
+  text-align: center;
 }
 
 .manager-container h1 {
   font-size: 24px;
   margin-bottom: 20px;
-  color: #333;
+  color: #e6b800;
 }
 
-.manager-container form {
+.stock-form {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  gap: 10px;
 }
 
 .manager-container input {
   padding: 10px;
   margin: 5px 0;
-  border: 1px solid #ccc;
+  border: 2px solid #e6b800;
   border-radius: 4px;
+  background: #1a1a1a;
+  color: #ffffff;
+  font-size: 16px;
 }
 
-.fancy-button {
+.gold-button {
   padding: 10px 15px;
   margin: 5px 0;
-  border: none;
-  border-radius: 4px;
-  background-color: #007bff;
-  color: white;
+  border: 2px solid #e6b800;
+  border-radius: 5px;
+  background: rgba(230, 184, 0, 0.1);
+  color: #e6b800;
   font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
-  transition: transform 0.2s;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  width: 100%;
 }
 
-.fancy-button:hover {
+.gold-button:hover {
+  background: #e6b800;
+  color: #121212;
   transform: scale(1.05);
+}
+
+.gold-button.delete {
+  background: rgba(255, 0, 0, 0.2);
+  border-color: red;
+  color: red;
+}
+
+.gold-button.delete:hover {
+  background: red;
+  color: white;
 }
 
 .stock-list {
   list-style-type: none;
   padding: 0;
+  margin-top: 20px;
 }
 
 .stock-list li {
@@ -52,11 +76,35 @@
   align-items: center;
   padding: 10px;
   margin: 5px 0;
-  background-color: #fff;
+  background-color: #1a1a1a;
   border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(230, 184, 0, 0.3);
 }
 
 .stock-list li span {
-  color: #333;
+  color: #e6b800;
+  font-size: 16px;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .manager-container {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .stock-list li {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .button-group {
+    width: 100%;
+    justify-content: center;
+  }
 }

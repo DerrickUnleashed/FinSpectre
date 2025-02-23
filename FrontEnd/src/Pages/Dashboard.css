@@ -1,0 +1,21 @@
+.dashboard-container {
+  background-color: black;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.dashboard-title {
+  color: rgba(255, 215, 0, 1); /* Gold color */
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 1);
+}
+
+.chart-container {
+  background-color: grey;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}

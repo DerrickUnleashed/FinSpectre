@@ -7,7 +7,7 @@ import Login from './Pages/Login';
 //import SignUpPage from './pages/SignUpPage';
 import NotFound from './Pages/NotFound';
 import Profile from './Pages/Profile';
-// import Manager from './Pages/Manager';
+import Manager from './Pages/Manager';
 function App() {
   return (
     <Router>
@@ -35,7 +35,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/*" element={<NotFound />} />
-           {/* <Route path="/manager" element={<Manager/>} /> */}
+            <Route path="/manager" element={<Manager/>} /> 
           </Routes>
         </main>
         <div className="flex flex-shrink bottom-0 w-full">

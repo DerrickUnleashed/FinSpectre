@@ -14,9 +14,10 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const token = await userCredential.user.getIdToken(); // Get the actual token
+      localStorage.setItem('token', token); // Store the actual token
       alert("✅ Logged in successfully!");
-      localStorage.setItem('token', 'loggedIn'); // Store a token
       navigate("/"); // Redirect to home page
       window.location.reload();
     } catch (error) {
@@ -26,9 +27,10 @@ const Login = () => {
 
   const handleGoogleLogin = async () => {
     try {
-      await signInWithPopup(auth, provider);
+      const result = await signInWithPopup(auth, provider);
+      const token = await result.user.getIdToken(); // Get the actual token
+      localStorage.setItem('token', token); // Store the actual token
       alert("✅ Google Login successful!");
-      localStorage.setItem('token', 'loggedIn'); // Store a token
       navigate("/"); // Redirect to home page
       window.location.reload();
     } catch (error) {

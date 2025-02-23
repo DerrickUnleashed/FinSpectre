@@ -3,8 +3,8 @@
   display: flex;
   align-items: center;
   width: 100%;
-  height:50px;
-  padding: 0.8rem 1.5rem;
+  height: 40px; /* Reduced height */
+  padding: 0.5rem 1.2rem;
   background: #121212;
   box-shadow: 0 4px 15px rgba(230, 184, 0, 0.3);
   border-bottom: 3px solid rgba(230, 184, 0, 0.8);
@@ -13,14 +13,16 @@
 /* Aligning Buttons to the Right with Less Gap */
 .nav-links {
   display: flex;
-  gap: 3%; /* Reduced space between buttons */
-  margin-left: 69%;
+  gap: 8px;
+  margin-left: auto;
+  margin-right: 15px;
+  flex-wrap: wrap;
 }
 
 .mainText {
   font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
   font-weight: bold;
-  font-size: x-large;
+  font-size: 1.1rem;
   text-transform: uppercase;
   background: linear-gradient(90deg, #e6b800, #b8860b);
   -webkit-background-clip: text;
@@ -37,29 +39,32 @@
   text-shadow: 0 0 15px rgba(230, 184, 0, 0.9), 0 0 25px rgba(184, 134, 11, 0.8);
 }
 
-/* Smaller Buttons */
+/* 3D Effect Buttons */
 .nav-btn {
   background: none;
   border: 2px solid transparent;
   color: #e6b800;
-  font-size: 1.2rem;
+  font-size: 0.85rem;
   font-weight: bold;
-  padding: 0.3rem 0.8rem;
+  padding: 0.2rem 0.6rem;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   position: relative;
   border-radius: 5px;
+  white-space: nowrap;
+  margin: 2px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transform: perspective(100px) translateZ(0);
 }
 
-/* Hover Effect */
 .nav-btn:hover {
   border-color: #e6b800;
   background: rgba(230, 184, 0, 0.15);
-  box-shadow: 0 0 10px rgba(230, 184, 0, 0.5);
-  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(230, 184, 0, 0.5);
+  transform: perspective(100px) translateZ(5px);
 }
 
-/* Active Click Effect */
 .nav-btn:active {
-  transform: scale(0.95);
+  transform: perspective(100px) translateZ(0) scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }

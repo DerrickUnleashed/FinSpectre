@@ -45,6 +45,7 @@ const Dashboard = () => {
   };
 
   return (
+
     <div className="dashboard-container">
       <h1 className="dashboard-title">Stock Dashboard</h1>
       <div className="chart-grid">

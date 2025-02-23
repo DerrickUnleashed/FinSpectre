@@ -1,3 +1,4 @@
+
 .dashboard-container {
   background-color: black;
   padding: 20px;
@@ -8,15 +9,17 @@
   gap: 20px;
   max-height: calc(100vh - 200px); /* Increased space for footer */
   overflow-y: auto; /* Enable scrolling */
-  width: 100%; /* Ensure full width */
-  margin-bottom: 50px; /* Additional space for footer */
+  width: 70vw; /* Ensure full width */
+  margin-bottom: 100px; /* Additional space for footer */
+  margin-left: 0 !important;
+
 }
 
 
 
 
 .dashboard-title {
-  margin-top: 150px;
+  margin-top: 200px;
   color: rgba(255, 215, 0, 1); /* Gold color */
   text-align: center;
   font-size: 2.5em;

@@ -9,6 +9,7 @@
   max-width: 650px;
   margin: 40px auto;
   text-align: center;
+  margin-left: 0;
 }
 
 .test{
@@ -18,13 +19,11 @@
 
 .manager-container h1 {
   width:40vw;
-  height: 20vh;
+  height: 5vh;
   font-size: 26px;
   margin-bottom: 15px;
   color: #e6b800;
-  justify-content: center;
   align-items: center;
-  display: flex
 }
 
 .stock-form {

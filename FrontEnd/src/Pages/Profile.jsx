@@ -11,7 +11,7 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, T
 
 const Profile = () => {
     // Editable states
-    const [username, setUsername] = useState("Derrick Samuel Richard");
+    const [username, setUsername] = useState("Derrick Richard");
     const [theme, setTheme] = useState("Light");
     const [notifications, setNotifications] = useState("Enabled");
 
@@ -109,7 +109,7 @@ const Profile = () => {
     };
 
     return (
-        <div style={{ marginBottom:'6.5%',marginTop:'56%',width: '100%', height: '100%', background: '#111', color: '#fff', fontFamily: 'Arial' }}>
+        <div style={{ marginBottom:'7.5%',marginTop:'56%',width: '100%', height: '100%', background: '#111', color: '#fff', fontFamily: 'Arial' }}>
             {/* Profile Content */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', padding: '20px', width: '100%' }}>
                 
@@ -118,8 +118,8 @@ const Profile = () => {
                     <div style={{ flex: 1, background: '#222', padding: '20px', borderRadius: '10px', boxShadow: '0 0 10px rgba(255, 215, 0, 0.2)' }}>
                         <h2 style={{ color: '#FFD700' }}>User Details</h2>
                         <p><strong>Username:</strong> <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} style={{ width: '300px' ,background: 'transparent', color: '#FFD700', border: 'none', fontSize: '16px' }} /></p>
-                        <p><strong>Email:</strong> derrick.richard@example.com</p>
-                        <p><strong>Account Created:</strong> March 2023</p>
+                        <p><strong>Email:</strong> derrickrds@gmail.com</p>
+                        <p><strong>Account Created:</strong> January 2025</p>
                         <p>Reset Password:</p>
                         <div>
                             <input
@@ -174,7 +174,7 @@ const Profile = () => {
                 </div>
 
                 {/* Logout Button */}
-                <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+                <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px', marginBottom: '20px' }}>
                     <button onClick={handleLogout} style={{ backgroundColor: '#f44336', color: 'white', padding: '10px 20px', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Logout</button>
                 </div>
             </div>

@@ -16,7 +16,7 @@ const Register = () => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
       alert("✅ Registration successful!");
-      navigate("/dashboard");
+      navigate("/login");
     } catch (error) {
       alert("❌ Registration failed: " + error.message);
     }

@@ -12,3 +12,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 dist/
+
+#videos
+FinSpectre rev1.mp4
